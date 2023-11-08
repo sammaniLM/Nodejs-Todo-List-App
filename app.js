@@ -30,12 +30,30 @@ function addTask(){
     }
 }
 
+function completeTask(){
+    const tasks = fs.readFileSync(taskFile, 'utf8').split('\n');
+    if (tasks.length >0){
+        displayTasks();
+        const taskIndex = readlineSync.question("Enter the number of the task you want to complete: ");
+        if(taskIndex >= 1 && taskIndex <= tasks.length){
+            const compltetedTask = tasks.splice(taskIndex -1, 1).join('');
+            fs.writeFileSync(taskFile, tasks.join('\n'));
+            console.log(`Task completed: ${compltetedTask}`);
+        }else {
+            console.log('Invalid Task Number');
+        }
+    }else {
+        console.log('No Tasks to Complete');
+    }
+}
+
 function main(){
     while (true){
         console.log('\nOptions : ');
         console.log('1. Display Tasks');
         console.log('2.Add a Task');
-        console.log('3. Quit');
+        console.log('3. Complete a Taks')
+        console.log('4. Quit');
         const choice = readlineSync.question('Enter your choice : ');
 
         switch (choice){
@@ -48,6 +66,10 @@ function main(){
                 break;
 
             case '3':
+                completeTask();
+                break;
+
+            case '4':
                 process.exit(0);
 
             default:

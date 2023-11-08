@@ -6,6 +6,7 @@
 <ul>
     <li>Add new tasks to your todo list.</li>
     <li>View your current tasks.</li>
+    <li>Complete Tasks</li>
     <li>User-friendly command-line interface.</li>
     <li>Data persistence through a text file</li>
 </ul>
@@ -24,3 +25,6 @@
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 ![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
+![img_6.png](img_6.png)
