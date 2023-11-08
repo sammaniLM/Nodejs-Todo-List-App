@@ -23,4 +23,4 @@
 <img src = "img_1.png" />
 <img src= "img_2.png" />
 <img src= "img_3.png"/>
-![img_4.png](img_4.png)
+<img src= "img_4.png" />
